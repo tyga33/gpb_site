@@ -3,34 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download App</title>
+    <title>Государственное Приложение Безопасности</title>
     <style>
+        /* Общие стили */
         body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            color: #333;
         }
+
+        /* Стили для заголовка */
+        h1 {
+            font-size: 3rem;
+            color: #000;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Контейнер для кнопок */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        /* Стили кнопок */
         .download-button {
-            padding: 20px 40px;
+            padding: 15px 40px;
             font-size: 18px;
-            background-color: #4CAF50;
+            background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
         }
+
         .download-button:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Стили для меток версий */
+        .version-label {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Стили для футера */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <a href="ГПБ_1.apk" download>
-        <button class="download-button">DOWNLOAD</button>
-    </a>
+    <h1>Государственное Приложение Безопасности</h1>
+
+    <div class="button-container">
+        <!-- Кнопка для скачивания первой версии -->
+        <div class="download-section">
+            <a href="ГПБ_1.apk" download>
+                <button class="download-button">DOWNLOAD</button>
+            </a>
+            <div class="version-label">Версия 1</div>
+        </div>
+
+        <!-- Кнопка для скачивания третьей версии -->
+        <div class="download-section">
+            <a href="ГПБ_V3_2.apk" download>
+                <button class="download-button">DOWNLOAD</button>
+            </a>
+            <div class="version-label">Версия 3</div>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 Государственное Приложение Безопасности
+    </footer>
 
 </body>
-</html> 
+</html>
