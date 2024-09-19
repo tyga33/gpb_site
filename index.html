@@ -5,98 +5,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Государственное Приложение Безопасности</title>
     <style>
-        /* Общие стили */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #e0eafc, #cfdef3);
-            color: #333;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
         }
 
-        /* Стили для заголовка */
         h1 {
-            font-size: 3rem;
-            color: #000;
+            font-size: 3em;
+            color: #333;
             text-align: center;
-            margin-bottom: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
+            margin-bottom: 40px;
         }
 
-        /* Контейнер для кнопок */
-        .button-container {
+        .version-container {
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            gap: 40px;
+            align-items: center;
         }
 
-        /* Стили кнопок */
         .download-button {
-            padding: 15px 40px;
-            font-size: 18px;
-            background-color: #007bff;
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 5px;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s, transform 0.2s;
+            margin: 10px 0;
+            width: 250px;
+            text-align: center;
         }
 
         .download-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+            background-color: #45a049;
         }
 
-        /* Стили для меток версий */
         .version-label {
-            font-size: 1.2rem;
-            text-align: center;
-            margin-top: 10px;
-            font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #555;
         }
 
-        /* Стили для футера */
-        footer {
-            position: absolute;
-            bottom: 20px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
+        /* Media query for smaller screens (mobile devices) */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 30px;
+            }
+
+            .download-button {
+                font-size: 14px;
+                width: 220px;
+                padding: 12px 25px;
+            }
+
+            .version-label {
+                font-size: 1.3em;
+            }
+        }
+
+        /* Media query for very small screens (mobile phones) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+
+            .download-button {
+                font-size: 12px;
+                width: 180px;
+                padding: 10px 20px;
+            }
+
+            .version-label {
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Государственное Приложение Безопасности</h1>
+    <h1>ГОСУДАРСТВЕННОЕ ПРИЛОЖЕНИЕ БЕЗОПАСНОСТИ</h1>
 
-    <div class="button-container">
-        <!-- Кнопка для скачивания первой версии -->
-        <div class="download-section">
+    <div class="version-container">
+        <div>
+            <span class="version-label">Версия 1</span>
             <a href="ГПБ_1.apk" download>
-                <button class="download-button">СКАЧАТЬ</button>
+                <button class="download-button">Скачать</button>
             </a>
-            <div class="version-label">Версия 1</div>
         </div>
 
-        <!-- Кнопка для скачивания третьей версии -->
-        <div class="download-section">
+        <div>
+            <span class="version-label">Версия 3</span>
             <a href="ГПБ_3.apk" download>
-                <button class="download-button">СКАЧАТЬ</button>
+                <button class="download-button">Скачать</button>
             </a>
-            <div class="version-label">Версия 3</div>
         </div>
     </div>
-
-    <footer>
-        © 2023 Государственное Приложение Безопасности
-    </footer>
 
 </body>
 </html>
