@@ -1,114 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Государственное Приложение Безопасности</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0A0F29;
+            color: #F4E6D9;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
         }
 
         h1 {
-            font-size: 3em;
-            color: #333;
             text-align: center;
-            margin-bottom: 40px;
+            margin-top: 40px;
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            color: #FFD700;
+            opacity: 0;
+            animation: fadeInTitle 2s forwards;
         }
 
-        .version-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .content {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeInContent 3s forwards;
         }
 
-        .download-button {
-            padding: 15px 30px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
+        .button-container {
+            text-align: center;
+            margin: 40px 0;
+            opacity: 0;
+            animation: fadeInButtons 4s forwards;
+        }
+
+        button {
+            background-color: #FFD700;
+            color: #0A0F29;
             border: none;
-            border-radius: 5px;
+            padding: 15px 40px;
+            margin: 10px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border-radius: 50px;
             cursor: pointer;
-            margin: 10px 0;
-            width: 250px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background-color: #f4ca16;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .feature-box {
+            background-color: #16203A;
+            padding: 20px;
+            border-radius: 12px;
+            width: 300px;
             text-align: center;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #F4E6D9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
         }
 
-        .download-button:hover {
-            background-color: #45a049;
+        .feature-box:hover {
+            transform: scale(1.05);
         }
 
-        .version-label {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #555;
+        .emoji-container {
+            position: fixed;
+            top: -50px;
+            left: 50%;
+            font-size: 2rem;
+            opacity: 0;
+            animation: emojiFall 10s infinite linear;
         }
 
-        /* Media query for smaller screens (mobile devices) */
+        @keyframes emojiFall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+            100% {
+                top: 120vh;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInTitle {
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInContent {
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInButtons {
+            to { opacity: 1; }
+        }
+
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2em;
-                margin-bottom: 30px;
+                font-size: 2rem;
             }
 
-            .download-button {
-                font-size: 14px;
-                width: 220px;
-                padding: 12px 25px;
-            }
-
-            .version-label {
-                font-size: 1.3em;
-            }
-        }
-
-        /* Media query for very small screens (mobile phones) */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8em;
-                margin-bottom: 20px;
-            }
-
-            .download-button {
-                font-size: 12px;
-                width: 180px;
-                padding: 10px 20px;
-            }
-
-            .version-label {
-                font-size: 1.1em;
+            .feature-box {
+                width: 100%;
+                margin: 10px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="emoji-container"></div>
 
-    <h1>ГОСУДАРСТВЕННОЕ ПРИЛОЖЕНИЕ БЕЗОПАСНОСТИ</h1>
+    <h1>Государственное Приложение Безопасности</h1>
 
-    <div class="version-container">
-        <div>
-            <span class="version-label">Версия 1</span>
-            <a href="ГПБ V.1.apk" download>
-                <button class="download-button">Скачать</button>
-            </a>
-        </div>
-
-        <div>
-            <span class="version-label">Версия 3</span>
-            <a href="ГПБ_3.apk" download>
-                <button class="download-button">Скачать</button>
-            </a>
-        </div>
+    <div class="content">
+        <p>Приложение, которое обеспечивает высочайший уровень безопасности для вас и ваших данных.</p>
     </div>
 
+    <div class="button-container">
+        <button>ВЕРСИЯ 1.3</button>
+        <a href="ГПБ V.1.apk" download>
+            <button class="download-button glow">Скачать приложение</button>
+        </a>
+    </div>
+
+    <div class="features">
+        <div class="feature-box">Мощная защита данных</div>
+        <div class="feature-box">Надежное шифрование</div>
+        <div class="feature-box">Автоматические обновления</div>
+        <div class="feature-box">Мониторинг угроз</div>
+        <div class="feature-box">Отечественный информационный продукт</div>
+        <div class="feature-box">Онлайн поддержка 27/7</div>
+    </div>
+
+    <script>
+        // Создание рандомных падающих эмодзи
+        function createFallingEmoji() {
+            const emojiContainer = document.createElement('div');
+            emojiContainer.classList.add('emoji-container');
+            emojiContainer.style.left = `${Math.random() * 100}vw`; // Рандомное расположение по ширине экрана
+            emojiContainer.style.animationDuration = `${Math.random() * 3 + 5}s`; // Рандомная скорость падения
+    
+            // Выбор случайного эмодзи
+            const emojis = ['💼', '👮‍♂️', '🛡️', '🔒', '🗝️', '📱', '👁️', '🚨'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            emojiContainer.textContent = randomEmoji;
+
+            document.body.appendChild(emojiContainer);
+
+            // Удаление эмодзи после завершения анимации
+            setTimeout(() => {
+                emojiContainer.remove();
+            }, 100000);
+        }
+
+        // Интервал для создания эмодзи
+        setInterval(createFallingEmoji, 1000);
+    </script>
 </body>
 </html>
